@@ -48,7 +48,7 @@ def test_owner_has_pets():
     pet1 = Pet("Fido", "dog", owner)
     pet2 = Pet("Clifford", "dog", owner)
 
-    assert owner.pets() == [pet1, pet2]
+    assert owner.pets == [pet1, pet2]
 
     Pet.all = []
 
@@ -59,7 +59,7 @@ def test_owner_adds_pets():
     owner.add_pet(pet)
 
     assert pet.owner == owner
-    assert owner.pets() == [pet]
+    assert owner.pets == [pet]
 
     Pet.all = []
 
